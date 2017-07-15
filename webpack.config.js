@@ -7,7 +7,7 @@ module.exports = {
     //webpack
     //https://webpack.js.org/configuration/devtool/
     //https://github.com/webpack/webpack/issues/2145
-    devtool: 'cheap-module-eval-source-map',
+    //devtool: 'cheap-module-eval-source-map',
     entry: path.join(__dirname + '/src/index.js'),
     output: {
         path: path.join(__dirname + '/dist'),
@@ -28,14 +28,19 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+        //new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks 
         new webpack.BannerPlugin("Copyright Flying Unicorns inc."),
         new HtmlWebpackPlugin({
             template: path.join(__dirname + "/src/index.tmpl.html"),
             favicon: 'favicon.ico'
         }),
-        //new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
-        new OpenBrowserPlugin({ url: 'http://localhost:8080',browser:'chrome' })
+
+        new OpenBrowserPlugin({ url: 'http://localhost:8080', browser: 'chrome' })
     ],
     //webpack-dev-server
     devServer: {
