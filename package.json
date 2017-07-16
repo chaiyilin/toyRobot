@@ -45,7 +45,7 @@
   },
   "scripts": {
     "prebuild": "del-cli dist -f",
-    "build": "webpack --env production --watch",
+    "build": "webpack --env production",
     "start": "webpack-dev-server --env development",
     "test": "jest",
     "test:watch": "npm test -- --watch"
