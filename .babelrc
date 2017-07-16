@@ -6,8 +6,22 @@
         "modules": false
       }
     ],
-    "react"
+    "react",
+    "stage-0"
   ],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "react"
+      ],
+      "plugins": [
+        "transform-object-rest-spread",
+        "transform-class-properties",
+        "jsx-control-statements"
+      ]
+    }
+  },
   "plugins": [
     "transform-object-rest-spread",
     "transform-class-properties",
