@@ -39,7 +39,7 @@ module.exports = {
             favicon: 'favicon.ico'
         }),
 
-        new OpenBrowserPlugin({ url: 'http://localhost:8080', browser: 'chrome' })
+        //new OpenBrowserPlugin({ url: 'http://localhost:8080', browser: 'chrome' })
     ],
     //webpack-dev-server
     devServer: {

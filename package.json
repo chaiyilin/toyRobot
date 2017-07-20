@@ -48,7 +48,7 @@
     "build": "webpack --env production",
     "start": "webpack-dev-server --env development",
     "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test --watch"
   },
   "jest": {
     "setupFiles": [
